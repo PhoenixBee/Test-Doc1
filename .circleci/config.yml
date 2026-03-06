@@ -3,14 +3,14 @@ version: 2.1
 jobs:
   cypress-tests:
     docker:
-      - image: cimg/node:18.18
+      - image: cypress/included:15.11.0  # Cypress + dependencies
     steps:
       - checkout
       - run:
-          name: Install Dependencies
-          command: npm install
+          name: Install dependencies
+          command: npm ci
       - run:
-          name: Run Cypress Tests
+          name: Run Cypress tests
           command: npx cypress run --spec "cypress/e2e/Enyata-Assessment/*.cy.js"
       - store_artifacts:
           path: cypress/screenshots

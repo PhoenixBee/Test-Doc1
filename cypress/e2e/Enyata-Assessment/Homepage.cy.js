@@ -1,4 +1,4 @@
-import LoginPage from "C:/Users/WarithObasa/Documents/QA/Enyata/cypress/PageObjects/LoginPage"
+import LoginPage from "../../PageObjects/LoginPage";
 import Delay from "../../PageObjects/Delay";
 
 describe('Homepage (Filter, Menu and Social)', () => {

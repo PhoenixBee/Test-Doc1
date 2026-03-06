@@ -1,24 +1,23 @@
+version: 2.1
+
 jobs:
-  build:
+  cypress-tests:
     docker:
-      - image: 'cimg/python:3.8'
+      - image: cimg/node:18.18
     steps:
       - checkout
-      - run: "echo \"\U0001F527 Building the application...\""
-  test:
-    docker:
-      - image: 'cimg/python:3.8'
-    steps:
-      - run: "echo \"\U0001F9EA Running tests...\""
-  deploy:
-    docker:
-      - image: 'cimg/python:3.8'
-    steps:
-      - run: "echo \"\U0001F680 Deploying the application...\""
+      - run:
+          name: Install Dependencies
+          command: npm install
+      - run:
+          name: Run Cypress Tests
+          command: npx cypress run --spec "cypress/e2e/Enyata-Assessment/*.cy.js"
+      - store_artifacts:
+          path: cypress/screenshots
+      - store_artifacts:
+          path: cypress/videos
+
 workflows:
-  version: 2
-  build-test-deploy:
+  test-and-report:
     jobs:
-      - build
-      - test
-      - deploy
+      - cypress-tests

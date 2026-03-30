@@ -1,1 +1,5 @@
-node_modules/
+# Cypress
+cypress_plain/cypress/videos/
+cypress_plain/cypress/screenshots/
+cypress_plain/cypress/results/
+cypress_plain/cypress/node_modules/

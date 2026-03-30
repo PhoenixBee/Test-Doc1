@@ -11,7 +11,7 @@ jobs:
           command: npm ci
       - run:
           name: Run Cypress tests
-          command: npx cypress run --spec "cypress/e2e/Enyata-Assessment/*.cy.js"
+          command: npx cypress run --spec "cypress_plain/cypress/e2e/Enyata-Assessment/*.cy.js"
       - store_artifacts:
           path: cypress/screenshots
       - store_artifacts:

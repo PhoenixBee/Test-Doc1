@@ -26,8 +26,9 @@ This repository contains **load, performance, and stress testing scripts** for t
 ## Usage
 
 1. Clone the repository:  
-   ```bash git clone https://github.com/PhoenixBee/Load-Stress-k6.git```
+   ```bash
+   git clone https://github.com/PhoenixBee/Load-Stress-k6.git
    
-2. Install k6
-3. Run tests using: k6 run <script.js>
-4. Analyze results via terminal output or export to JSON/CSV for visualization: k6 run --out json=results.json <script.js>
+3. Install k6
+4. Run tests using: k6 run <script.js>
+5. Analyze results via terminal output or export to JSON/CSV for visualization: k6 run --out json=results.json <script.js>
